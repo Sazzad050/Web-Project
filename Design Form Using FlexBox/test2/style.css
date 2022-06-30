@@ -1,0 +1,52 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    --light-bg: #f0f0f0;
+    --dark-grey: #404040;
+}
+
+.card {
+    background-color: #da1e5d;
+}
+
+ #nav{
+    
+    padding-left:  34px;
+    padding-top: 41px;
+} 
+
+#card1, #card2, #card3, #card4, #card5 {
+    padding-left: 162px;
+    padding-right: 162px;
+    padding-bottom: 90px;
+    padding-top: 90px;
+    margin: 25px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#container h2 {
+    color: #ffffff;
+}
+
+.nav-item {
+    padding: 15px 30px 15px 30px;
+    border-radius: 14px;
+    border-width: 0px;
+    margin: 5px;
+    
+}
+
+.active {
+    background: #606060;
+    color: #E0E0E0;
+}
