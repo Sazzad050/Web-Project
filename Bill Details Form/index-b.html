@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bill Details></title>
+        <link rel="stylesheet" type="text/css" href="bill-style.css">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+    </head>
+     <body>
+        <header>
+            
+            <div>
+                <div class="container">
+                    <h3>Bill Details </h3>
+                     <hr>
+                      <from>
+                        <table class="billDetails-tbl">
+                            <tr  class="input-size">
+                                <td>Payment</td>
+                                <td> Refered BY</td>
+                                <td>Bill Date</td>
+                            </tr>
+                            <tr>
+                                
+                                <td  class="input-size">
+                                    <select>
+                                        <option>Select</option>
+                                        <option>a</option>
+                                        <option>a</option>
+                                        <option>a</option>
+                                        <option>a</option>
+                                        <option>a</option>
+                                    </select>
+                                </td>
+                                 <td  class="input-size">
+                                    <select>
+                                        <option>Select </option>
+                                        <option>a</option>
+                                        <option>a</option>
+                                        <option>a</option>
+                                        <option>a</option>
+                                        <option>a</option>
+                                    </select>
+                                </td>
+                                <td  class="input-size">
+                                    <input type="date" name="" placeholder="2022-06-22">
+                                </td>
+                            </tr>
+                        </table>
+                                
+                    <br>
+                </div>
+            </div>
+            
+            <div class="Report-details">
+                <h3> Report Details</h3>
+                <hr>
+                <form>
+                    Delivary  Date
+                        <input type="date" name="" placeholder="2022-06-22">
+                    Delivary  Time
+                        <input type="time" name="" placeholder="time">
+                        <br>
+                        <br>
+                        
+    
+                        Remark 
+                        <input type="text" name="" placeholder="" class="billDetails-tbl">
+    
+            
+                </form>
+            </div>
+        <br>
+        <br>
+
+
+        <div style="padding-left: 45px;" id="rows" >
+            <table class="custom-frm add-row">
+                <tr class="custom-frm">  
+                    <th class="custom-frm" >Catagory</th>
+                    <th class="custom-frm">Test Name</th>
+                    <th class="custom-frm">Price</th>
+                    
+                    <th class="custom-frm"  colspan="2">Discount(%)</th>
+                
+
+                    <th class="custom-frm" button onclick="getPrice()" >Total Price</th>
+
+                    
+                </tr>
+                <tr id="new-table-row">
+                    <td class="custom-frm">
+                        <label>
+                            <select class="input-size">
+                                <option>Select </option>
+                                <option>a</option>
+                                <option>a</option>
+                                <option>a</option>
+                                <option>a</option>
+                                <option>a</option>
+                            </select>
+    
+                        </label>
+                    </td>
+                    <td class="custom-frm">
+                        <label>
+                            <select class="input-size">
+                                <option>Select </option>
+                                <option>a</option>
+                                <option>a</option>
+                                <option>a</option>
+                                <option>a</option>
+                                <option>a</option>
+                            </select>
+    
+                        </label>
+                    </td>
+                    <td class="custom-frm">
+                        <input id="price" placeholder="0.00">
+                    </td>
+                    <td class="custom-frm">
+                        
+                        <input id="discount" placeholder="0.00">
+                    </td>
+                    <td class="custom-frm" >
+                        <button onclick="getPrice()">=</button>
+                        <input readonly id="total1">
+                    </td>
+                    
+                    <td class="custom-frm">
+                        <input readonly id="total10">
+                    </td>
+                    
+                    
+                </tr>
+             </table>
+             <br>
+            <div class="add-row-btn">
+                <input type="submit" id="addTask" value="Add Row " />
+            </div>
+
+        </div>
+
+        
+        <br><br>
+
+        <div class="summaryContainer">
+            <div></div>
+            <div class="rightContainer">
+                <h4>Bill Summary</h4>
+                <hr>
+                <table>
+                    <tr> 
+                        <td><label for="" input readonly id="total10">Sub Total</label>
+
+                        <td>
+                        <div class="input-group mb-3">
+                             <span class="input-group-text" id="basic-addon1">$</span>
+                            <input id="sub-total" class="form-control" placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1"></td>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td><label for="">Tax(+)</label></td>
+                        <td>
+                        <div class="input-group mb-3">
+                             <span class="input-group-text" id="basic-addon1">%</span>
+                            <input value="2" type="text" class="form-control" placeholder="0" aria-label="Username" aria-describedby="basic-addon1" readonly></td>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td><label for="">Discount(-)</label></td>
+                        <td>
+                        <div class="input-group mb-3">
+                             <span class="input-group-text" id="basic-addon1">$</span>
+                            <input id="discount-sub-total" type="text" class="form-control" placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1"></td>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td><label for="">Net Payable</label></td>
+                        <td>
+                        <div class="input-group mb-3">
+                             <span class="input-group-text" id="basic-addon1">$</span>
+                            <input id="net-payable" type="text" class="form-control" placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1"></td>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td><label for="">Recived Amount</label></td>
+                        <td>
+                            <input type="text" class="form-control" placeholder="Enter Payment Amount" aria-label="Username"></td>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td><label for="">Pay Via</label></td>
+                        <td>
+                            <select class="input-size">
+                                <option>Select </option>
+                                <option>a</option>
+                                <option>a</option>
+                                <option>a</option>
+                                <option>a</option>
+                                <option>a</option>
+                            </select></td>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td><label for="">Remarks</label></td>
+                        <td>
+                            <input type="text" class="form-control" placeholder="Wright Your Remarks" aria-label="Username"></td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <br>
+
+        <button class="right-btn">Create Bill</button>
+    </from>
+        </header>
+    </body>
+
+
+<script src="script.js"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</html>
